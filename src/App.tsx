@@ -1,8 +1,8 @@
 import { useState } from "react";
 
 import viteLogo from "/vite.svg";
-import pokedex from "./assets/pokedexClosed.svg";
 
+import pokedex from "./assets/pokedexClosed.svg";
 import reactLogo from "./assets/react.svg";
 
 import "./App.css";
