@@ -18,13 +18,12 @@
 	filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-.pokeCard
-{
-  position:absolute;
-  width: 176px;
-  height:176px;
-  position: absolute;
-  transform: translate(185%,53%);
+.pokeCard {
+	position: absolute;
+	width: 176px;
+	height: 176px;
+	position: absolute;
+	transform: translate(185%, 53%);
 }
 @keyframes logo-spin {
 	from {
@@ -50,5 +49,5 @@
 }
 
 .pokedex {
-	width:clamp(450px,30%,35%);
+	width: clamp(450px, 30%, 35%);
 }
