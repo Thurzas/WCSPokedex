@@ -5,8 +5,7 @@ import PokemonCard from "./components/PokemonCard";
 import "./App.css";
 
 function App() {
-
-  const pokemonList = [
+	const pokemonList = [
 		{
 			name: "bulbasaur",
 			imgSrc:
@@ -14,7 +13,7 @@ function App() {
 		},
 		{
 			name: "mew",
-      imgSrc:null
+			imgSrc: null,
 		},
 	];
 	const pokemon = pokemonList[1];
@@ -23,7 +22,7 @@ function App() {
 			<section>
 				<h1>Projet : Pokédex (Wild Code School édition)</h1>
 				<div className="pokeCard">
-					<PokemonCard name={pokemon.name} imgSrc={pokemon.imgSrc}/>
+					<PokemonCard name={pokemon.name} imgSrc={pokemon.imgSrc} />
 				</div>
 				<img className="pokedex" src={PokedexOpen} alt="pokedex" />
 			</section>

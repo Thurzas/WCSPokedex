@@ -1,5 +1,4 @@
-function PokemonCard({name, imgSrc}) {
-
+function PokemonCard({ name, imgSrc }) {
 	return (
 		<figure className="CardCaption">
 			{imgSrc === undefined || imgSrc === "" || imgSrc === null ? (

@@ -24,9 +24,9 @@
 	height: 177px;
 	position: absolute;
 	transform: translate(185%, 50%);
-  p{
-    font-size: 30px;
-  }
+	p {
+		font-size: 30px;
+	}
 }
 @keyframes logo-spin {
 	from {
