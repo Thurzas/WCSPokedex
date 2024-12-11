@@ -10,7 +10,7 @@ function App() {
 		<>        
 			<section>
 				<h1>Projet : Pokédex (Wild Code School édition)</h1>
-        <div className="pokemonCard">
+        <div className="pokeCard">
         <PokemonCard />
         </div>
 				<img className="pokedex" src={PokedexOpen} alt="pokedex" />

@@ -18,10 +18,11 @@
 	filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
-.pokemonCard
+.pokeCard
 {
   position:absolute;
-  width: fit-content;
+  width: 176px;
+  height:176px;
   position: absolute;
   transform: translate(185%,53%);
 }
@@ -49,5 +50,5 @@
 }
 
 .pokedex {
-	max-width: 450px;
+	width:clamp(450px,30%,35%);
 }
