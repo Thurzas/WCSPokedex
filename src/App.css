@@ -20,10 +20,13 @@
 
 .pokeCard {
 	position: absolute;
-	width: 176px;
-	height: 176px;
+	width: 177px;
+	height: 177px;
 	position: absolute;
-	transform: translate(185%, 53%);
+	transform: translate(185%, 50%);
+  p{
+    font-size: 30px;
+  }
 }
 @keyframes logo-spin {
 	from {
