@@ -59,6 +59,7 @@
 #mainComponent {
 	background-color: var(--red);
 	padding-top: 75px;
+	border-radius: 0 0 0 17px;
 }
 #topDecoration {
 	width: 275px;
@@ -112,7 +113,7 @@
 	}
 }
 #rightComponent {
-	width: 275px;
+	width: 250px;
 	.topRightDecoration {
 		margin-top: 49px;
 		width: 250px;
@@ -123,6 +124,7 @@
 		background-color: var(--red);
 		width: 250px;
 		height: 299px;
+		border-radius: 0 0 17px 0;
 	}
 	.screenInfo {
 		width: 200px;
