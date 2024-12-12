@@ -113,6 +113,10 @@
 		background-color: var(--redDarker);
 	}
 }
+.hidden
+{
+	opacity: 0;
+}
 #rightComponent {
 	width: 250px;
 	.topRightDecoration {
@@ -146,7 +150,7 @@
 		padding: 0;
 	}
 	button {
-		max-width: 11ch;
+		width: 13ch;
 		background-color: aqua;
 		font-size: 7px;
 		color: black;

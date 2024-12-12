@@ -1,5 +1,5 @@
 interface PokemonCard {
-	id?: number;
+	id: number;
 	name: string;
 	imgSrc?: string;
 }
@@ -14,7 +14,7 @@ function PokemonCard(pokemon: PokemonCard) {
 			) : (
 				<img src={pokemon.imgSrc} alt={pokemon.name} />
 			)}
-			<figcaption>{pokemon.name}</figcaption>
+			<figcaption>N#{pokemon.id+1} {pokemon.name}</figcaption>
 		</figure>
 	);
 }

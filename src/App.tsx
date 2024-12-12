@@ -2,6 +2,7 @@ import { useState } from "react";
 import PokemonCard from "./components/PokemonCard";
 import "./App.css";
 
+
 function App() {
 	const [pokemonTabIndex, setPokemonTabIndex] = useState(0); // Page actuelle
 	const [pokeIndex, setPokeIndex] = useState(0); // Index dans la page actuelle
@@ -932,7 +933,7 @@ function App() {
 							<section className="screen">
 								<div className="pokeCard">
 									{pokemon && (
-										<PokemonCard name={pokemon.name} imgSrc={pokemon.imgSrc} />
+										<PokemonCard id={pokemon.id} name={pokemon.name} imgSrc={pokemon.imgSrc} />
 									)}
 								</div>
 							</section>
