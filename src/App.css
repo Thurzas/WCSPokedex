@@ -3,6 +3,10 @@
 	margin: 0 auto;
 	padding: 2rem;
 	text-align: center;
+	--red: #e72020ff;
+	--redDark: rgb(145, 20, 20);
+	--redDarker: #7c0000aa;
+	--screenInfoColor: #3f3f3f;
 }
 
 .logo {
@@ -18,15 +22,130 @@
 	filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+.back {
+	background-color: var(--redDarker);
+	font-size: 10px;
+	width: 36px;
+	height: 8px;
+	padding: 2px;
+}
+.next {
+	width: 36px;
+	height: 8px;
+	font-size: 10px;
+	background-color: rgb(8, 0, 124);
+	padding: 2px;
+}
+.rounded {
+	width: 15px;
+	height: 45px;
+	aspect-ratio: 1;
+	border-radius: 50%;
+}
+#pokedexContainer {
+	display: flex;
+	flex-direction: column;
+	width: 550px;
+	height: auto;
+	border-radius: 17px 0 0 17px;
+	margin: 0 auto;
+
+	#subComponent {
+		display: flex;
+		flex-direction: row;
+	}
+}
+
+#mainComponent {
+	background-color: var(--red);
+	padding-top: 75px;
+}
+#topDecoration {
+	width: 275px;
+	height: 105px;
+	border-radius: 0 17px 0 0;
+	background-image: url("./assets/top.svg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-radius: 17px;
+	position: absolute;
+}
 .pokeCard {
-	position: absolute;
-	width: 177px;
-	height: 177px;
-	position: absolute;
-	transform: translate(185%, 50%);
+	width: 250px;
+	aspect-ratio: 1;
+	background-image: url("./assets/screen.svg");
+	background-repeat: no-repeat;
+	background-position: center;
 	p {
 		font-size: 30px;
 	}
+}
+.cardCaption {
+	padding-top: 3.5rem;
+}
+.cross {
+	width: 65px;
+	aspect-ratio: 1;
+	background-color: transparent !important;
+	background-image: url("./assets/buttonCross.svg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#junction {
+	border-radius: 0 17px 0 0;
+	display: flex;
+	background: linear-gradient(
+		to right,
+		var(--redDark) 0%,
+		var(--red) 50%,
+		var(--redDark) 100%
+	);
+	flex-direction: column;
+	justify-content: space-around;
+	height: 438px;
+
+	.bracket {
+		width: 25px;
+		height: 15px;
+		background-color: var(--redDarker);
+	}
+}
+#rightComponent {
+	width: 275px;
+	.topRightDecoration {
+		margin-top: 49px;
+		width: 250px;
+		height: 90px;
+		background-image: url("./assets/topRight.svg");
+	}
+	.rightWrapper {
+		background-color: var(--red);
+		width: 250px;
+		height: 299px;
+	}
+	.screenInfo {
+		width: 200px;
+		height: 70px;
+		margin: 0 auto;
+		background-color: var(--screenInfoColor);
+		border-radius: 10px;
+		box-shadow: 2px 2px #000000 inset;
+		padding: 1rem;
+	}
+}
+.buttonWrapperRight {
+	button {
+		background-color: aqua;
+	}
+}
+
+#buttonContainer {
+	display: flex;
+	height: fit-content;
+	flex-direction: row;
+	justify-content: space-around;
+	padding: 1rem;
 }
 @keyframes logo-spin {
 	from {
