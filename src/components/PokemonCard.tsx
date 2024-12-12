@@ -1,4 +1,5 @@
 interface PokemonCard {
+	id?: number;
 	name: string;
 	imgSrc?: string;
 }
