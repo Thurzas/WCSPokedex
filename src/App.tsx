@@ -940,8 +940,10 @@ function App() {
 							<section id="buttonContainer">
 								<button
 									type="button"
-									onClick={() =>
-										setPokeIndex(Math.floor(Math.random() * currentTabs.length))
+									onClick={() =>{
+											setPokemonTabIndex(Math.floor(Math.random() * pokemonList.length/ItemPerPage))
+											setPokeIndex(Math.floor(Math.random() * currentTabs.length))
+										}
 									}
 									className="rounded"
 								/>
@@ -957,8 +959,8 @@ function App() {
 								<button
 									type="button"
 									onClick={() =>
-										setPokeIndex((prev) =>
-											prev < currentTabs.length - 1 ? prev + 1 : prev,
+										setPokeIndex((next) =>
+											next < currentTabs.length - 1 ? next + 1 : next,
 										)
 									}
 									className="next"
@@ -996,8 +998,11 @@ function App() {
 									<button
 										type="button"
 										className="yellowSpace"
-										onClick={() =>
-											setPokemonTabIndex((prev) => (prev > 0 ? prev - 1 : prev))
+										onClick={() =>{
+												setPokeIndex(next =>next=0
+												)											
+												setPokemonTabIndex((prev) => (prev > 0 ? prev - 1 : prev))
+											}
 										}
 									>
 										LEFT
@@ -1005,12 +1010,15 @@ function App() {
 									<button
 										type="button"
 										className="yellowSpace"
-										onClick={() =>
-											setPokemonTabIndex((prev) =>
-												(prev + 1) * ItemPerPage < pokemonList.length
-													? prev + 1
-													: prev,
-											)
+										onClick={() =>{
+												setPokeIndex(next =>next=0
+												)	
+												setPokemonTabIndex((prev) =>
+													(prev + 1) * ItemPerPage < pokemonList.length
+														? prev + 1
+														: prev,
+												)
+											}
 										}
 									>
 										RIGHT
