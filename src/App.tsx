@@ -1,7 +1,7 @@
 import { useState } from "react";
 import PokemonCard from "./components/PokemonCard";
 import "./App.css";
-
+import PokemonInfo from "./components/PokemonInfo";
 
 function App() {
 	const [pokemonTabIndex, setPokemonTabIndex] = useState(0); // Page actuelle
@@ -976,7 +976,7 @@ function App() {
 							<div className="topRightDecoration" />
 							<section className="rightWrapper">
 								<section className="screenInfo">
-									<p>TODO: Pokemon Infos here</p>
+									<PokemonInfo id={pokemon.id}/>
 								</section>
 								<section className="buttonWrapperRight">
 									<section className="tabs">

@@ -46,10 +46,9 @@
 #pokedexContainer {
 	display: flex;
 	flex-direction: column;
-	width: 550px;
-	height: auto;
+	width: clamp(250px, 550px, 35%);
+	height: 470px;
 	border-radius: 17px 0 0 17px;
-	margin: 0 auto;
 
 	#subComponent {
 		display: flex;
@@ -61,6 +60,7 @@
 	background-color: var(--red);
 	padding-top: 75px;
 	border-radius: 0 0 0 17px;
+	height:390px;
 }
 #topDecoration {
 	width: 275px;
@@ -105,7 +105,7 @@
 	);
 	flex-direction: column;
 	justify-content: space-around;
-	height: 438px;
+	height: 465px;
 
 	.bracket {
 		width: 25px;
@@ -119,6 +119,7 @@
 }
 #rightComponent {
 	width: 250px;
+	height:475px;
 	.topRightDecoration {
 		margin-top: 49px;
 		width: 250px;
@@ -128,7 +129,7 @@
 	.rightWrapper {
 		background-color: var(--red);
 		width: 250px;
-		height: 299px;
+		height:325px;
 		border-radius: 0 0 17px 0;
 	}
 	.screenInfo {
@@ -139,6 +140,14 @@
 		border-radius: 10px;
 		box-shadow: 2px 2px #000000 inset;
 		padding: 1rem;
+		p
+		{
+			text-align: left;
+			font-size: 12px;
+			padding: 0;
+			margin: 0;
+
+		}
 	}
 }
 .buttonWrapperRight {
@@ -195,6 +204,4 @@
 	color: #888;
 }
 
-.pokedex {
-	width: clamp(450px, 30%, 35%);
-}
+
