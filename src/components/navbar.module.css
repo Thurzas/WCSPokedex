@@ -1,0 +1,11 @@
+.nav {
+	section {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		width: 100%;
+	}
+	button {
+		width: 11ch;
+	}
+}

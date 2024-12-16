@@ -1,12 +1,9 @@
 import { useState } from "react";
 import PokemonCard from "./components/PokemonCard";
 import "./App.css";
+import NavBar from "./components/Navbar";
 import PokemonInfo from "./components/PokemonInfo";
-
 function App() {
-	const [pokemonTabIndex, setPokemonTabIndex] = useState(0); // Page actuelle
-	const [pokeIndex, setPokeIndex] = useState(0); // Index dans la page actuelle
-	const ItemPerPage = 10;
 	const pokemonList = [
 		{
 			id: 0,
@@ -915,15 +912,26 @@ function App() {
 				"https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/151.png",
 		},
 	];
+	const [pokemonTabIndex, setPokemonTabIndex] = useState(0);
+	const [pokeIndex, setPokeIndex] = useState(0);
+	const [language, setLanguage] = useState("en");
+	const ItemPerPage = 10;
 
 	const start = pokemonTabIndex * ItemPerPage;
 	const end = start + ItemPerPage;
-	const currentTabs = pokemonList.slice(start, end); // Pokémon de la page actuelle
-
-	const pokemon = currentTabs[pokeIndex]; // Pokémon sélectionné
+	const currentTabs = pokemonList.slice(start, end);
+	const pokemon = currentTabs[pokeIndex];
 
 	return (
 		<>
+			<NavBar
+				setLanguage={setLanguage}
+				setPokeIndex={setPokeIndex}
+				setPokemonTabIndex={setPokemonTabIndex}
+				ItemPerPage={ItemPerPage}
+				pokemonList={pokemonList}
+				currentTabs={currentTabs}
+			/>
 			<section>
 				<h1>Projet : Pokédex (Wild Code School édition)</h1>
 				<section id="pokedexContainer">
@@ -933,18 +941,29 @@ function App() {
 							<section className="screen">
 								<div className="pokeCard">
 									{pokemon && (
-										<PokemonCard id={pokemon.id} name={pokemon.name} imgSrc={pokemon.imgSrc} />
+										<PokemonCard
+											lang={language}
+											id={pokemon.id}
+											name={pokemon.name}
+											imgSrc={pokemon.imgSrc}
+										/>
 									)}
 								</div>
 							</section>
 							<section id="buttonContainer">
 								<button
 									type="button"
-									onClick={() =>{
-											setPokemonTabIndex(Math.floor(Math.random() * pokemonList.length/ItemPerPage))
-											setPokeIndex(Math.floor(Math.random() * currentTabs.length))
-										}
-									}
+									onClick={() => {
+										setPokemonTabIndex(
+											Math.floor(
+												(Math.random() * (pokemonList.length - 1)) /
+													ItemPerPage,
+											),
+										);
+										setPokeIndex(
+											Math.floor(Math.random() * (currentTabs.length - 1)),
+										);
+									}}
 									className="rounded"
 								/>
 								<button
@@ -978,7 +997,7 @@ function App() {
 							<div className="topRightDecoration" />
 							<section className="rightWrapper">
 								<section className="screenInfo">
-									<PokemonInfo id={pokemon.id}/>
+									<PokemonInfo lang={language} id={pokemon.id} />
 								</section>
 								<section className="buttonWrapperRight">
 									<section className="tabs">
@@ -998,28 +1017,26 @@ function App() {
 									<button
 										type="button"
 										className="yellowSpace"
-										onClick={() =>{
-												setPokeIndex(next =>next=0
-												)											
-												setPokemonTabIndex((prev) => (prev > 0 ? prev - 1 : prev))
-											}
-										}
+										onClick={() => {
+											setPokeIndex(0);
+											setPokemonTabIndex((prev) =>
+												prev > 0 ? prev - 1 : prev,
+											);
+										}}
 									>
 										LEFT
 									</button>
 									<button
 										type="button"
 										className="yellowSpace"
-										onClick={() =>{
-												setPokeIndex(next =>next=0
-												)	
-												setPokemonTabIndex((prev) =>
-													(prev + 1) * ItemPerPage < pokemonList.length
-														? prev + 1
-														: prev,
-												)
-											}
-										}
+										onClick={() => {
+											setPokeIndex(0);
+											setPokemonTabIndex((prev) =>
+												(prev + 1) * ItemPerPage < pokemonList.length
+													? prev + 1
+													: prev,
+											);
+										}}
 									>
 										RIGHT
 									</button>
