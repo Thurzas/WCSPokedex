@@ -68,7 +68,11 @@ figcaption {
 		flex-direction: row;
 	}
 }
-
+.types {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
 #mainComponent {
 	background-color: var(--red);
 	padding-top: 75px;

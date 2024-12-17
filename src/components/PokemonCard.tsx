@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./pokemonCard.module.css";
+import TranslatedTypes from "./translatedTypes";
 
 interface PokemonCardProps {
 	id: number;
@@ -31,7 +32,7 @@ type PokemonTypeResponse = {
 	types: TypeEntry[];
 };
 
-function PokemonCard({id,name,imgSrc,lang,}:PokemonCardProps){
+function PokemonCard({ id, name, imgSrc, lang }: PokemonCardProps) {
 	const [nameCaption, setNameCaption] = useState<string | null>(null);
 	const [types, setTypes] = useState<TypeEntry[] | null>(null);
 	const [loading, setLoading] = useState<boolean>(true);
@@ -90,15 +91,16 @@ function PokemonCard({id,name,imgSrc,lang,}:PokemonCardProps){
 			{imgSrc ? <img src={imgSrc} alt={nameCaption || name} /> : <p>???</p>}
 			<figcaption>
 				N#{id + 1} {nameCaption || name}
-				<div>
+				<div className="types">
 					{types ? (
 						types.map((typeEntry) => (
-							<span
-								className={styles[typeEntry.type.name]}
+							<TranslatedTypes
 								key={typeEntry.slot}
-							>
-								{typeEntry.type.name}
-							</span>
+								url={typeEntry.type.url}
+								name={typeEntry.type.name}
+								slot={typeEntry.slot}
+								lang={lang}
+							/>
 						))
 					) : (
 						<p>unknown types</p>
@@ -107,6 +109,6 @@ function PokemonCard({id,name,imgSrc,lang,}:PokemonCardProps){
 			</figcaption>
 		</figure>
 	);
-};
+}
 
 export default PokemonCard;
