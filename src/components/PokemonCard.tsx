@@ -31,12 +31,7 @@ type PokemonTypeResponse = {
 	types: TypeEntry[];
 };
 
-const PokemonCard: React.FC<PokemonCardProps> = ({
-	id,
-	name,
-	imgSrc,
-	lang,
-}) => {
+function PokemonCard({id,name,imgSrc,lang,}:PokemonCardProps){
 	const [nameCaption, setNameCaption] = useState<string | null>(null);
 	const [types, setTypes] = useState<TypeEntry[] | null>(null);
 	const [loading, setLoading] = useState<boolean>(true);
